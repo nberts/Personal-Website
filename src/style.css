@@ -26,78 +26,119 @@ h1, h2, h3 {
   font-family: var(--primary-font);
 }
 
-/* Header Styling */
+/* Header and Navigation Container */
 header {
   background-color: var(--charcoal);
-  padding: 40px 60px;
+  padding: 30px 50px;
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .titles {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
+  position: relative;
+  z-index: 1;
 }
 
 .titles h1 {
   font-family: var(--primary-font);
-  font-weight: bold;
   font-size: 3.5em;
   margin: 0;
   color: var(--pure-white);
-  line-height: 1.1;
 }
 
 .titles h2 {
   font-family: var(--secondary-font);
   font-size: 1.4em;
-  margin: 0;
+  margin: 5px 0 0 0;
   font-weight: 300;
   color: var(--sage-light);
   letter-spacing: 0.5px;
 }
 
-/* Navigation */
+/* Navigation Styling */
 .page-menu {
-  padding: 10px 20px;
   background-color: var(--sage);
-  border-radius: 2px;
+  padding: 15px 30px;
+  border-radius: 3px;
+  position: relative;
+  z-index: 1;
 }
 
 .menu {
   display: flex;
-  gap: 30px;
+  justify-content: flex-end;
+  gap: 40px;
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
 .menu li {
-  font-family: var(--secondary-font);
-  font-size: 1.1em;
   color: var(--pure-white);
   cursor: pointer;
-  transition: color 0.3s ease;
+  position: relative;
+  padding: 5px 0;
+  font-family: var(--secondary-font);
+  font-size: 1.1em;
+  transition: all 0.3s ease;
 }
 
+/* Hover Effect */
 .menu li::after {
   content: '';
   position: absolute;
-  bottom: -5px;
-  left: 0;
   width: 0;
-  height: 2px;
+  height: 1px;
+  bottom: 0;
+  left: 50%;
   background-color: var(--pure-white);
-  transition: width 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.menu li:hover {
+  transform: translateY(-2px);
 }
 
 .menu li:hover::after {
   width: 100%;
+  left: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header {
+    padding: 20px;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .titles h1 {
+    font-size: 2.5em;
+  }
+
+  .titles h2 {
+    font-size: 1.2em;
+  }
+
+  .page-menu {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .menu {
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .menu li {
+    font-size: 1em;
+  }
 }
 
 /* About Section */
+/* About Section Container */
 .about-section {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -108,73 +149,77 @@ header {
   align-items: start;
 }
 
-.about-content {
-  width: 100%;
-}
-
+/* Profile Image Styling */
 .profile-container {
   width: 300px;
 }
 
 .profile-pic {
   width: 100%;
-  aspect-ratio: 4/5; /* Creates oval shape - adjust ratio as needed */
-  border-radius: 60% / 50%; /* Creates oval border - adjust percentages as needed */
+  aspect-ratio: 4/5;
+  border-radius: 60% / 50%;
   object-fit: cover;
   border: 1px solid var(--light-gray);
 }
 
-/* And here's the responsive part if you need it */
-@media (max-width: 768px) {
-  .profile-container {
-    width: 250px;
-    margin: 0 auto;
-  }
+/* About Content Area */
+.about-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
+.about-content h2 {
+  font-family: var(--primary-font);
+  font-size: 2em;
+  margin: 0 0 10px 0;
+}
+
+.about-content > p {
+  font-size: 1em;
+  line-height: 1.3;
+  margin-bottom: 15px;
+}
+
+/* Skills Grid */
 .about-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 25px;
-  margin-top: 30px;
+  gap: 12px;
 }
 
 .skill-box {
-  padding: 30px 25px; /* More vertical padding */
+  padding: 30px 20px;
   background: var(--pure-white);
   border: 1px solid var(--light-gray);
   border-radius: 2px;
   transition: transform 0.3s ease;
-  text-align: center; /* Center all text */
-  min-height: 120px; /* Make boxes more rectangular */
+  text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Vertically center content */
+  justify-content: center;
+}
+
+.skill-box:hover {
+  transform: translateY(-5px);
+  border-color: var(--sage);
 }
 
 .skill-box h3 {
-  margin: 0 0 15px 0;
+  margin: 0 0 5px 0;
   color: var(--sage);
   font-family: var(--primary-font);
-  font-size: 1.3em;
+  font-size: 1.1em;
 }
 
 .skill-box p {
   margin: 0;
-  line-height: 1.5;
+  line-height: 1.2;
+  font-size: 0.9em;
 }
 
-/* Responsive adjustments */
-@media (max-width: 1024px) {
-  .about-section {
-    gap: 40px;
-  }
-  
-  .about-grid {
-    gap: 20px;
-  }
-}
-
+/* Responsive Design */
 @media (max-width: 768px) {
   .about-section {
     grid-template-columns: 1fr;
@@ -182,19 +227,19 @@ header {
   }
 
   .profile-container {
-    width: 250px; /* Slightly smaller on mobile */
+    width: 250px;
     margin: 0 auto;
   }
 
   .about-grid {
-    grid-template-columns: 1fr; /* Stack boxes on mobile */
+    grid-template-columns: 1fr;
   }
 }
 
 @media (min-width: 769px) and (max-width: 900px) {
   .about-grid {
-    grid-template-columns: 1fr; /* Single column for medium screens */
-    max-width: 500px; /* Limit width of stacked boxes */
+    grid-template-columns: 1fr;
+    max-width: 500px;
   }
 }
 
