@@ -28,8 +28,7 @@
       
       <div class="about-content">
         <h2>About Me</h2>
-        <p>Hi there! I'm a Junior Developer based in London, crafting clean and user-friendly web experiences.</p>
-        <div class="about-grid">
+        <p>Hi there! I'm a Junior Developer based in London, with a passion for creating clean, intuitive web experiences. With a background in marketing and a natural eye for design, I bring a unique perspective to development that bridges the gap between user needs and technical solutions. I specialize in crafting responsive websites and applications that not only function flawlessly but also engage and delight users.</p>        <div class="about-grid">
           <div class="skill-box">
             <h3>Frontend</h3>
             <p>HTML, CSS, JavaScript, React.js</p>
@@ -50,49 +49,30 @@
       </div>
     </div>
     <div class="portfolio-section">
-  <h2>Portfolio</h2>
-  <div class="project-grid">
-    <div class="project-card">
-      <div class="project-content">
-        <h3>Weather Dashboard</h3>
-        <p>A modern weather application that provides real-time weather data with a clean, intuitive interface. Features include 5-day forecast, temperature tracking, and location-based updates. Built with attention to user experience and mobile responsiveness.</p>
-        <div class="tech-stack">
-          <span>HTML</span>
-          <span>CSS</span>
-          <span>JavaScript</span>
-          <span>OpenWeather API</span>
+      <h2>Portfolio</h2>
+      
+      <div class="carousel-container">
+        <!-- Loading State -->
+        <div class="loading-state">
+          <div class="loader"></div>
+          <p>Loading projects...</p>
         </div>
+    
+        <!-- Error State -->
+        <div class="error-state hidden">
+          <p>Oops! Something went wrong loading the projects.</p>
+          <button class="retry-button">Try Again</button>
+        </div>
+    
+        <button class="carousel-button prev" disabled>←</button>
+        <div class="project-carousel"></div>
+        <button class="carousel-button next" disabled>→</button>
       </div>
     </div>
     
-    <div class="project-card">
-      <div class="project-content">
-        <h3>AI Poetry Generator</h3>
-        <p>An innovative web application that generates unique poems using AI technology. Users can input themes or emotions to receive personalized poetry. The project showcases the integration of modern AI capabilities with creative expression.</p>
-        <div class="tech-stack">
-          <span>React.js</span>
-          <span>Node.js</span>
-          <span>OpenAI API</span>
-          <span>CSS Modules</span>
-        </div>
+        <button class="carousel-button next">→</button>
       </div>
     </div>
-    
-    <div class="project-card">
-      <div class="project-content">
-        <h3>World Clock App</h3>
-        <p>A sleek world clock application that helps users track time across different zones. Perfect for remote teams and international collaborations. Features include customizable locations, daylight savings tracking, and meeting time converter.</p>
-        <div class="tech-stack">
-          <span>HTML</span>
-          <span>CSS</span>
-          <span>JavaScript</span>
-          <span>Moment.js</span>
-        </div>
-      </div>
-    </div>
-    </div>
-  </div>
-</div>
     </div>
     <div class="blog-section">
       <div class="blog-post1">
